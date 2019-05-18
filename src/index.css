@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to left, rgb(54, 190, 187), rgb(174, 74, 159));
+  /*overflow-y: hidden;*/
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.scrollbox {
+	overflow-y: scroll;
+	border-top: 2px solid gray;
+	height: 435px;
+	/*padding: 10px 0;*/
+	margin-top: 15px;
 }
