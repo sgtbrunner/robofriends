@@ -4,7 +4,7 @@ A cool modern search card app.
 
 ## Prerequisites
 
-None
+NPM installed
 
 ## Getting Started
 
