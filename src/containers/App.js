@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import Cardlist from '../components/cardlist';
+import Cardlist from '../components/Cardlist';
 import SearchBox from '../components/searchbox';
 import Scroll from '../components/scroll'
 import './App.css';
 
 class App extends Component {
-	// STATE DECLARATION
 	constructor() {
 		super()
 		this.state = {
@@ -14,24 +13,23 @@ class App extends Component {
 		}
 	}
 
-	// componentDidMount() IS A LIFECYCLE HOOK THAT RUNS ONCE THE APP COMPONENT IS MOUNTED IN INDEX.HTML.
-	// IN THIS CASE, IT FETCHES THE USERS FROM THE SERVER DATABASE, CONVERTS THE RESPONSE TO JSON AND 
-	// UPDATES THIS.STATE.ROBOTS WITH THE USERS FETCHED
 	componentDidMount() {
 		fetch("https://jsonplaceholder.typicode.com/users")
 		.then(response => response.json())
 		.then(users => this.setState({robots: users}));
-	}
-	// TRIGGERED EVERY TIME THE SEARCHBOX CHANGES
+	};
+
 	onSearchChange = (event) => {
 		this.setState({ searchField: event.target.value });
-	}
-	// RENDER TO INDEX.HTML
-	render() {
-		const filteredRobots = this.state.robots.filter((robot) => {
-		// Needs .toLowerCase() on both sides of the declaration to compare input to user.name on the same level
-			return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase()); 
+	};
+
+	filterRobots = () => {
+		return this.state.robots.filter((robot) => {
+			return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
 		})
+	};
+
+	render() {
 	    	if (!this.state.robots.length) {
 	    		return <h1 className="tc f1">Loading...</h1> 
 	    	} else {
@@ -40,7 +38,7 @@ class App extends Component {
 	      	        	<h1 className="f2">RoboFriends</h1>
 	      	        	<SearchBox searchChange={this.onSearchChange}/>
 	      	        	<Scroll>
-	      	        		<Cardlist robots={filteredRobots}/>
+	      	        		<Cardlist robots={this.filterRobots()}/>
 	      	        	</Scroll>
 	      	      	</div>
 	      	    )
