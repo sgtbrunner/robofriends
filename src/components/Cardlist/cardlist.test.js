@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Cardlist from './Cardlist';
+import Cardlist from './cardlist.component';
 
 it('expect to render Card component', () => {
   const mockRobots = [
