@@ -49,5 +49,6 @@ module.exports = {
     'no-tabs': [0, { allowIndentationTabs: true }],
     'no-mixed-spaces-and-tabs': [0, 'smart-tabs'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/prefer-default-export': 'off',
   },
 };
