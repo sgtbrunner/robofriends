@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Card = ({ name, email, id }) => (
   <div className="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green">
@@ -7,5 +8,11 @@ const Card = ({ name, email, id }) => (
     <p>{email}</p>
   </div>
 );
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
 export default Card;
