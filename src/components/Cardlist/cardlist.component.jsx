@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Card from '../Card/card.component';
 
 const Cardlist = ({ robots }) => (
@@ -9,5 +11,9 @@ const Cardlist = ({ robots }) => (
     })}
   </div>
 );
+
+Cardlist.propTypes = {
+  robots: PropTypes.array.isRequired,
+};
 
 export default Cardlist;

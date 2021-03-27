@@ -4,7 +4,6 @@ import Cardlist from '../components/Cardlist/cardlist.component';
 import ErrorBoundary from '../components/Error/error-boundary.component';
 import Loading from '../components/Loading/loading.component';
 import SearchBox from '../components/Searchbox/searchbox.component';
-import Scroll from '../components/Scroll/scroll.component';
 import './App.css';
 
 const USERS_URL = 'https://jsonplaceholder.typicode.com/users';
@@ -57,9 +56,9 @@ class App extends Component {
           <div>
             <h1 className="t1">RoboFriends</h1>
             <SearchBox searchChange={onSearchChange} />
-            <Scroll>
+            <div className="pv4">
               <Cardlist robots={filterRobots()} />
-            </Scroll>
+            </div>
           </div>
         )}
       </div>
