@@ -19,11 +19,13 @@ it('renders App without crashing', () => {
 
 it('filters robots correctly I', () => {
   const mockProps2 = {
-    robots: [{
-      id: 3,
-      name: 'John',
-      email: 'locke@hotmail.com',
-    }],
+    robots: [
+      {
+        id: 3,
+        name: 'John',
+        email: 'locke@hotmail.com',
+      },
+    ],
     searchField: 'a',
   };
 
@@ -33,21 +35,21 @@ it('filters robots correctly I', () => {
 
 it('filters robots correctly II', () => {
   const mockProps2 = {
-    robots: [{
-      id: 3,
-      name: 'John',
-      email: 'locke@hotmail.com',
-    }],
+    robots: [
+      {
+        id: 3,
+        name: 'John',
+        email: 'locke@hotmail.com',
+      },
+    ],
     searchField: 'a',
   };
 
   const wrapper2 = shallow(<App {...mockProps2} />);
   expect(wrapper2.instance().filterRobots()).toEqual([]);
-  expect(wrapper2.instance().filterRobots()).toEqual(
-    {
-      id: 3,
-      name: 'John',
-      email: 'locke@hotmail.com',
-    },
-  );
+  expect(wrapper2.instance().filterRobots()).toEqual({
+    id: 3,
+    name: 'John',
+    email: 'locke@hotmail.com',
+  });
 });
