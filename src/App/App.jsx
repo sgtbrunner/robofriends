@@ -34,9 +34,7 @@ class App extends Component {
 
   filterRobots = () => {
     return this.state.robots.filter((robot) => {
-      return robot.name
-        .toLowerCase()
-        .includes(this.state.searchField.toLowerCase());
+      return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
     });
   };
 
@@ -48,11 +46,11 @@ class App extends Component {
       <div className="tc">
         {(loading || error) && (
           <div className="message-container">
-            { loading && <Loading /> }
-            { error && <ErrorBoundary /> }
+            {loading && <Loading />}
+            {error && <ErrorBoundary />}
           </div>
         )}
-        { !error && !loading && (
+        {!error && !loading && (
           <div>
             <h1 className="t1">RoboFriends</h1>
             <SearchBox searchChange={onSearchChange} />
