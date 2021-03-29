@@ -2,8 +2,12 @@
 
 exports[`expect to render Card component 1`] = `
 "<div className=\\"dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green\\">
-  <img alt=\\"robot\\" src=\\"https://robohash.org/NaN\\" />
-  <h2 />
-  <p />
+  <img alt=\\"robot\\" src=\\"https://robohash.org/Pep Guardiolapep.guardiola@gmail.com0\\" />
+  <h2>
+    Pep Guardiola
+  </h2>
+  <p>
+    pep.guardiola@gmail.com
+  </p>
 </div>"
 `;

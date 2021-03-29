@@ -9,6 +9,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,5 +18,9 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "comma-dangle": ["warn", "only-multiline"],
+    "react/jsx-filename-extension": "warn",
+    "react/jsx-props-no-spreading": "off"
+  }
 }
