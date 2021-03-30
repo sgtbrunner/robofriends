@@ -20,7 +20,7 @@
   "plugins": ["react"],
   "rules": {
     "comma-dangle": ["warn", "only-multiline"],
-    "react/jsx-filename-extension": "warn",
+    "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off"
   }
 }
