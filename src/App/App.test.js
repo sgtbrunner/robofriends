@@ -1,56 +1,27 @@
-/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from './App';
 
-let wrapper;
+const mockProps = {
+  error: null,
+  loading: false,
+  robots: [
+    {
+      id: 3,
+      name: 'John',
+      email: 'locke@hotmail.com',
+    },
+  ],
+  searchField: '',
+};
 
-beforeEach(() => {
-  const mockProps = {
-    robots: [],
-    searchField: '',
-  };
+const mountComponent = ({ props = mockProps, newProps }) => mount(<App {...props} {...newProps} />);
 
-  wrapper = shallow(<App {...mockProps} />);
-});
-
-it('renders App without crashing', () => {
-  expect(wrapper).toMatchSnapshot();
-});
-
-it('filters robots correctly I', () => {
-  const mockProps2 = {
-    robots: [
-      {
-        id: 3,
-        name: 'John',
-        email: 'locke@hotmail.com',
-      },
-    ],
-    searchField: 'a',
-  };
-
-  const wrapper2 = shallow(<App {...mockProps2} />);
-  expect(wrapper2.instance().filterRobots()).toEqual([]);
-});
-
-it('filters robots correctly II', () => {
-  const mockProps2 = {
-    robots: [
-      {
-        id: 3,
-        name: 'John',
-        email: 'locke@hotmail.com',
-      },
-    ],
-    searchField: 'a',
-  };
-
-  const wrapper2 = shallow(<App {...mockProps2} />);
-  expect(wrapper2.instance().filterRobots()).toEqual([]);
-  expect(wrapper2.instance().filterRobots()).toEqual({
-    id: 3,
-    name: 'John',
-    email: 'locke@hotmail.com',
+describe('App page', () => {
+  describe('render', () => {
+    it('expect App component to match snapshot', () => {
+      const wrapper = mountComponent({});
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });
