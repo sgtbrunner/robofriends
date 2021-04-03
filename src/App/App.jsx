@@ -28,19 +28,18 @@ class App extends Component {
       .finally(() => this.setState({ loading: false }));
   }
 
-  onSearchChange = (event) => {
-    this.setState({ searchField: event.target.value });
-  };
-
-  filterRobots = () => {
-    return this.state.robots.filter((robot) => {
+  _filterRobots = () =>
+    this.state.robots.filter((robot) => {
       return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
     });
+
+  _onSearchChange = (event) => {
+    this.setState({ searchField: event.target.value });
   };
 
   render() {
     const { error, loading } = this.state;
-    const { filterRobots, onSearchChange } = this;
+    const { _filterRobots, _onSearchChange } = this;
 
     return (
       <div className="tc">
@@ -53,9 +52,9 @@ class App extends Component {
         {!error && !loading && (
           <div>
             <h1 className="t1">RoboFriends</h1>
-            <SearchBox searchChange={onSearchChange} />
+            <SearchBox searchChange={_onSearchChange} />
             <div className="pv4">
-              <Cardlist robots={filterRobots()} />
+              <Cardlist robots={_filterRobots()} />
             </div>
           </div>
         )}
