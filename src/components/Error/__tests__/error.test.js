@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Error from './error-boundary.component';
+import Error from '../error-boundary.component';
 
 const mountComponent = () => shallow(<Error />);
 
