@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Card from './card.component';
+import Card from '../card.component';
 
 let wrapper;
 const mountComponent = (props) => shallow(<Card {...props} />);

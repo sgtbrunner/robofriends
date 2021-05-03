@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchBox from './searchbox.component';
+import SearchBox from '../searchbox.component';
 
 const mountComponent = () => shallow(<SearchBox />);
 

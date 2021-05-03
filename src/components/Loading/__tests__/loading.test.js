@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Loading from './loading.component';
+import Loading from '../loading.component';
 
 const mountComponent = () => shallow(<Loading />);
 
