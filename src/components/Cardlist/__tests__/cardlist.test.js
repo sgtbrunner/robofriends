@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Cardlist from './cardlist.component';
-import Card from '../Card/card.component';
+import Cardlist from '../cardlist.component';
+import Card from '../../Card/card.component';
 
 let wrapper;
 const mountComponent = (props) => shallow(<Cardlist robots={props} />);

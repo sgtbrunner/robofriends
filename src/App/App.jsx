@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Cardlist from '../components/Cardlist/cardlist.component';
-import ErrorAlert from '../components/ErrorAlert/error-alert.component';
-import Loading from '../components/Loading/loading.component';
-import SearchBox from '../components/Searchbox/searchbox.component';
+import Cardlist from '../components/Cardlist';
+import ErrorAlert from '../components/ErrorAlert';
+import Loading from '../components/Loading';
+import SearchBox from '../components/Searchbox';
 import './App.css';
 
 const USERS_URL = 'https://jsonplaceholder.typicode.com/users';
