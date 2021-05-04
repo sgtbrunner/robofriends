@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Searchbox component render expect SearchBox component to match snapshot 1`] = `ShallowWrapper {}`;
