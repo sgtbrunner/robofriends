@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Cardlist from '../components/Cardlist/cardlist.component';
-import ErrorBoundary from '../components/Error/error-boundary.component';
+import ErrorAlert from '../components/ErrorAlert/error-alert.component';
 import Loading from '../components/Loading/loading.component';
 import SearchBox from '../components/Searchbox/searchbox.component';
 import './App.css';
@@ -22,7 +22,10 @@ class App extends Component {
   componentDidMount() {
     this.setState({ loading: true });
     fetch(USERS_URL)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error('Something went wrong');
+      })
       .then((users) => this.setState({ robots: users }))
       .catch((error) => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
@@ -41,12 +44,15 @@ class App extends Component {
     const { error, loading } = this.state;
     const { _filterRobots, _onSearchChange } = this;
 
+    let WarnMessageComponent = null;
+    if (error) WarnMessageComponent = ErrorAlert;
+    if (loading) WarnMessageComponent = Loading;
+
     return (
       <div className="tc">
-        {(loading || error) && (
-          <div className="message-container">
-            {loading && <Loading />}
-            {error && <ErrorBoundary />}
+        {WarnMessageComponent && (
+          <div className="warn-container">
+            <WarnMessageComponent />
           </div>
         )}
         {!error && !loading && (
