@@ -16,7 +16,7 @@ h3,
   font-size: 4em;
 }
 
-.message-container {
+.warn-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
