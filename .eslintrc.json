@@ -4,7 +4,12 @@
     "jest": true,
     "es6": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": [
+    "airbnb",
+    "plugin:jest-dom/recommended",
+    "plugin:prettier/recommended",
+    "plugin:testing-library/react",
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -17,14 +22,37 @@
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "jest-dom",
+    "react",
+    "testing-library"
+  ],
   "rules": {
     "arrow-body-style": "off",
-    "comma-dangle": ["warn", "only-multiline"],
-    "no-underscore-dangle": ["error", { "allowAfterThis": false }],
+    "comma-dangle": [
+      "warn",
+      "only-multiline"
+    ],
+    "jest-dom/prefer-checked": "error",
+    "jest-dom/prefer-enabled-disabled": "error",
+    "jest-dom/prefer-required": "error",
+    "jest-dom/prefer-to-have-attribute": "error",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": false
+      }
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
     "react/destructuring-assignment": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn",
+    "testing-library/no-dom-import": "off"
   }
 }
