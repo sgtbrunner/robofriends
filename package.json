@@ -4,13 +4,15 @@
   "homepage": "https://sgtbrunner.github.io/robofriends",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
+    "msw": "^0.28.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "tachyons": "^4.11.1",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6"
+    "tachyons": "^4.11.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -30,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "test-coverage": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "npx eslint src/ --fix",
