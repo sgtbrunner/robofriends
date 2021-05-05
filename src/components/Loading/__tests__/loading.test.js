@@ -1,8 +1,17 @@
-import React from 'react';
+import { screen } from '@testing-library/react';
+
+import { mountComponent } from '../../../utils/test.utils';
 import Loading from '../index';
 
 describe('Loading component', () => {
-  describe('render', () => {
-    it('expect Loading component to match snapshot', () => {});
+  test('should match snapshot', () => {
+    const { container } = mountComponent({ component: Loading });
+    expect(container).toMatchSnapshot();
+  });
+
+  test('check component loading text', () => {
+    mountComponent({ component: Loading });
+    const loading = screen.getByRole('heading', { name: /loading/i });
+    expect(loading).toBeInTheDocument();
   });
 });

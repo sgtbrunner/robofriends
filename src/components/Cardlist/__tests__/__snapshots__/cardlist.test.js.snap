@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cardlist component should match snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"
+    >
+      <img
+        alt="robot"
+        src="https://robohash.org/Baby Yodababy.yoda@newrepublic.com1"
+      />
+      <h2>
+        Baby Yoda
+      </h2>
+      <p>
+        baby.yoda@newrepublic.com
+      </p>
+    </div>
+    <div
+      class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"
+    >
+      <img
+        alt="robot"
+        src="https://robohash.org/Pep Guardiolapep.guardiola@mancity.co.uk2"
+      />
+      <h2>
+        Pep Guardiola
+      </h2>
+      <p>
+        pep.guardiola@mancity.co.uk
+      </p>
+    </div>
+    <div
+      class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"
+    >
+      <img
+        alt="robot"
+        src="https://robohash.org/Bruenor Battlehammerbruenor.thedwar@forgottenrealms.com3"
+      />
+      <h2>
+        Bruenor Battlehammer
+      </h2>
+      <p>
+        bruenor.thedwar@forgottenrealms.com
+      </p>
+    </div>
+    <div
+      class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"
+    >
+      <img
+        alt="robot"
+        src="https://robohash.org/Tim Ferristime.ferris@fourhourworkweek.net4"
+      />
+      <h2>
+        Tim Ferris
+      </h2>
+      <p>
+        time.ferris@fourhourworkweek.net
+      </p>
+    </div>
+    <div
+      class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"
+    >
+      <img
+        alt="robot"
+        src="https://robohash.org/Alexander Supertrampchris.mccandless@intothewild.com5"
+      />
+      <h2>
+        Alexander Supertramp
+      </h2>
+      <p>
+        chris.mccandless@intothewild.com
+      </p>
+    </div>
+  </div>
+</div>
+`;
