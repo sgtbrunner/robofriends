@@ -1,12 +1,35 @@
-import React from 'react';
+import { screen } from '@testing-library/react';
+
+import { mountComponent } from '../../../utils/test.utils';
 import Card from '../index';
+
+const props = {
+  id: 1,
+  name: 'Baby Yoda',
+  email: 'baby.yoda@newrepublic.com',
+};
 
 describe('Card component', () => {
   describe('render', () => {
-    it('expect Card component to match snapshot', () => {});
+    test('expect Card component to match snapshot', () => {
+      const { container } = mountComponent({ component: Card, props });
+      expect(container).toMatchSnapshot();
+    });
 
-    it('expect Card component to have mock name', () => {});
+    test('check component child elements', () => {
+      mountComponent({ component: Card, props });
 
-    it('expect Card component to have mock email', () => {});
+      // check image
+      const image = screen.getByRole('img', { name: 'robot' });
+      expect(image).toBeInTheDocument();
+
+      // check name
+      const name = screen.getByRole('heading', { name: props.name });
+      expect(name).toBeInTheDocument();
+
+      // check email
+      const email = screen.getByText(props.email);
+      expect(email).toBeInTheDocument();
+    });
   });
 });

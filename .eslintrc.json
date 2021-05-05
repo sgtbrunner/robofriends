@@ -8,7 +8,7 @@
     "airbnb",
     "plugin:jest-dom/recommended",
     "plugin:prettier/recommended",
-    "plugin:testing-library/react",
+    "plugin:testing-library/react"
   ],
   "globals": {
     "Atomics": "readonly",

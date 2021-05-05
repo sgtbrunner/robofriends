@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Searchbox component should match snapshot 1`] = `
+<div>
+  <div>
+    <input
+      class="pa3 ba b--gray bg-washed-yellow"
+      placeholder="find your robot here..."
+      type="search"
+    />
+  </div>
+</div>
+`;
