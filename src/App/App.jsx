@@ -4,9 +4,8 @@ import Cardlist from '../components/Cardlist';
 import ErrorAlert from '../components/ErrorAlert';
 import Loading from '../components/Loading';
 import SearchBox from '../components/Searchbox';
+import api from '../utils/api.utils';
 import './App.css';
-
-const USERS_URL = 'https://jsonplaceholder.typicode.com/users';
 
 class App extends Component {
   constructor() {
@@ -21,11 +20,8 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    fetch(USERS_URL)
-      .then((response) => {
-        if (response.ok) return response.json();
-        throw new Error('Something went wrong');
-      })
+    api
+      .getUsers()
       .then((users) => this.setState({ robots: users }))
       .catch((error) => this.setState({ error }))
       .finally(() => this.setState({ loading: false }));
@@ -44,18 +40,18 @@ class App extends Component {
     const { error, loading } = this.state;
     const { _filterRobots, _onSearchChange } = this;
 
-    let WarnMessageComponent = null;
-    if (error) WarnMessageComponent = ErrorAlert;
-    if (loading) WarnMessageComponent = Loading;
+    let AlertMessage = null;
+    if (error) AlertMessage = ErrorAlert;
+    if (loading) AlertMessage = Loading;
 
     return (
       <div className="tc">
-        {WarnMessageComponent && (
-          <div className="warn-container">
-            <WarnMessageComponent />
+        {AlertMessage && (
+          <div role="alert" className="alert-container">
+            <AlertMessage />
           </div>
         )}
-        {!error && !loading && (
+        {!AlertMessage && (
           <div>
             <h1 className="t1">RoboFriends</h1>
             <SearchBox searchChange={_onSearchChange} />

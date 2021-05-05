@@ -16,7 +16,7 @@ h3,
   font-size: 4em;
 }
 
-.warn-container {
+.alert-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
