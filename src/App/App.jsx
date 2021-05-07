@@ -27,6 +27,10 @@ class App extends Component {
       .finally(() => this.setState({ loading: false }));
   }
 
+  componentWillUnmount() {
+    this.setState = () => {};
+  }
+
   _filterRobots = () =>
     this.state.robots.filter((robot) => {
       return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());

@@ -10,26 +10,24 @@ const props = {
 };
 
 describe('Card component', () => {
-  describe('render', () => {
-    test('expect Card component to match snapshot', () => {
-      const { container } = mountComponent({ component: Card, props });
-      expect(container).toMatchSnapshot();
-    });
+  it('expect Card component to match snapshot', () => {
+    const { container } = mountComponent({ component: Card, props });
+    expect(container).toMatchSnapshot();
+  });
 
-    test('check component child elements', () => {
-      mountComponent({ component: Card, props });
+  it('check component child elements', () => {
+    mountComponent({ component: Card, props });
 
-      // check image
-      const image = screen.getByRole('img', { name: 'robot' });
-      expect(image).toBeInTheDocument();
+    // check image
+    const image = screen.getByRole('img', { name: 'robot' });
+    expect(image).toBeInTheDocument();
 
-      // check name
-      const name = screen.getByRole('heading', { name: props.name });
-      expect(name).toBeInTheDocument();
+    // check name
+    const name = screen.getByRole('heading', { name: props.name });
+    expect(name).toBeInTheDocument();
 
-      // check email
-      const email = screen.getByText(props.email);
-      expect(email).toBeInTheDocument();
-    });
+    // check email
+    const email = screen.getByText(props.email);
+    expect(email).toBeInTheDocument();
   });
 });

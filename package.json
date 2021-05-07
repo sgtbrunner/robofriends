@@ -15,6 +15,7 @@
     "tachyons": "^4.11.1"
   },
   "devDependencies": {
+    "@testing-library/user-event": "^13.1.8",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
