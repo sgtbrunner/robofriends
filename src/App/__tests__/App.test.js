@@ -20,7 +20,8 @@ describe('App', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('loads and renders the robots information', async () => {
+  it(`loads, renders the robots information and filters cards according
+    to user input`, async () => {
     mountComponent({ component: App });
 
     // shows loading component on start
@@ -40,34 +41,29 @@ describe('App', () => {
     expect(searchbox).toBeInTheDocument();
 
     // it should render the cards
-    const images = screen.getAllByRole(IMAGE, { name: ROBOT });
-    expect(images).toHaveLength(5);
+    let cardImages = screen.getAllByRole(IMAGE, { name: ROBOT });
+    expect(cardImages).toHaveLength(5);
     ROBOTS.forEach((robot) => {
       const cardName = screen.getByRole(HEADING, { name: robot.name });
       const cardEmail = screen.getByText(robot.email);
       expect(cardName).toBeInTheDocument();
       expect(cardEmail).toBeInTheDocument();
     });
-  });
 
-  it(`shows two (2) filtered cards when user inputs "super"`, async () => {
-    mountComponent({ component: App });
-
-    const searchbox = await screen.findByRole(SEARCHBOX);
+    // it shows two (2) filtered cards when user inputs "super"
+    userEvent.clear(searchbox);
     userEvent.type(searchbox, 'super');
 
-    const cards = screen.getAllByRole(IMAGE, { name: ROBOT });
-    expect(cards).toHaveLength(2);
-  });
+    cardImages = screen.getAllByRole(IMAGE, { name: ROBOT });
+    expect(cardImages).toHaveLength(2);
 
-  it(`shows one (1) filtered card when user inputs "guard"`, async () => {
-    mountComponent({ component: App });
-
-    const searchbox = await screen.findByRole(SEARCHBOX);
+    // // it shows one (1) filtered card when user inputs "guard"
+    userEvent.clear(searchbox);
     userEvent.type(searchbox, 'guard');
 
-    const cards = screen.getByRole(IMAGE, { name: ROBOT });
-    expect(cards).toBeInTheDocument();
+    cardImages = screen.getAllByRole(IMAGE, { name: ROBOT });
+    // eslint-disable-next-line jest-dom/prefer-in-document
+    expect(cardImages).toHaveLength(1);
   });
 
   it(`fails to fetch data and there is a problem getting the robots 
