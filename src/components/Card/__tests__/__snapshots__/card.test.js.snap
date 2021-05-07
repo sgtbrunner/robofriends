@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component render expect Card component to match snapshot 1`] = `
+exports[`Card component expect Card component to match snapshot 1`] = `
 <div>
   <div
     class="dib br3 pa1 ma2 grow bw2 shadow-5 bg-light-green"

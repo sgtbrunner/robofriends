@@ -1,47 +1,28 @@
 import { screen } from '@testing-library/react';
 
 import { mountComponent } from '../../../utils/test.utils';
+import USERS from '../../../mocks/users';
 import Cardlist from '../index';
 
 const props = {
-  robots: [
-    {
-      id: 1,
-      name: 'Baby Yoda',
-      email: 'baby.yoda@newrepublic.com',
-    },
-    {
-      id: 2,
-      name: 'Pep Guardiola',
-      email: 'pep.guardiola@mancity.co.uk',
-    },
-    {
-      id: 3,
-      name: 'Bruenor Battlehammer',
-      email: 'bruenor.thedwar@forgottenrealms.com',
-    },
-    {
-      id: 4,
-      name: 'Tim Ferris',
-      email: 'time.ferris@fourhourworkweek.net',
-    },
-    {
-      id: 5,
-      name: 'Alexander Supertramp',
-      email: 'chris.mccandless@intothewild.com',
-    },
-  ],
+  robots: USERS,
 };
 
 describe('Cardlist component', () => {
-  test('should match snapshot', () => {
+  it('should match snapshot', () => {
     const { container } = mountComponent({ component: Cardlist, props });
     expect(container).toMatchSnapshot();
   });
 
-  test('should render five (5) cards', () => {
+  it('should render five (5) cards if robots has 5 valid items', () => {
     mountComponent({ component: Cardlist, props });
     const cards = screen.getAllByRole('img', { name: 'robot' });
     expect(cards).toHaveLength(5);
+  });
+
+  it('should render no (0) cards if robots has no valid items', () => {
+    mountComponent({ component: Cardlist, props: { robots: [] } });
+    const cards = screen.queryByRole('img', { name: 'robot' });
+    expect(cards).not.toBeInTheDocument();
   });
 });
