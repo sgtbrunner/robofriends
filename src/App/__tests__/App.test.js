@@ -22,6 +22,7 @@ describe('App', () => {
 
   it(`loads, renders the robots information and filters cards according
     to user input`, async () => {
+
     mountComponent({ component: App });
 
     // shows loading component on start
@@ -43,6 +44,7 @@ describe('App', () => {
     // it should render the cards
     let cardImages = screen.getByRole(IMAGE, { name: ROBOT });
     expect(cardImages).toHaveLength(5);
+
     ROBOTS.forEach((robot) => {
       const cardName = screen.getByRole(HEADING, { name: robot.name });
       const cardEmail = screen.getByText(robot.email);
