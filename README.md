@@ -53,7 +53,6 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -72,11 +71,13 @@ This project was originally built as a pratical exercise to learning React and A
 
   RoboFriends was built using the following technologies:
 
-  <img align="center" alt="Brunner-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Brunner-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Brunner-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Brunner-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <br></br>
+  <div>
+    <img align="center" alt="Brunner-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+    <img align="center" alt="Brunner-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+    <img align="center" alt="Brunner-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+    <img align="center" alt="Brunner-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  </div>
+  <br />
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -143,15 +144,15 @@ Project Link: [https://github.com/sgtbrunner/robofriends](https://github.com/sgt
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Pages](https://pages.github.com)
 * [Tachyons](https://tachyons.io/docs/)
-* [JSON Placeholder](https://jsonplaceholder.typicode.com/)
 * [RoboHash](https://robohash.org/)
+* [JSON Placeholder](https://jsonplaceholder.typicode.com/)
 * [Eslint](https://eslint.org/)
 * [Prettier](https://prettier.io/)
 * [Jest](https://jestjs.io/)
 * [Testing Library](https://testing-library.com/)
 * [MSW](https://mswjs.io/)
+* [GitHub Pages](https://pages.github.com)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
