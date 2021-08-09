@@ -69,7 +69,7 @@ This project was originally built as a pratical exercise to learning React and A
 
 ### Built With
 
-  RoboFriends was built using the following technologies:
+  RoboFriends was built with the following technologies:
 
   <div>
     <img align="center" alt="Brunner-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
@@ -93,27 +93,57 @@ Have `npm` installed in your machine.
   ```
 
 ### Installation
+  On terminal
 
 1. Clone the repo
    ```sh
    git clone https://github.com/sgtbrunner/robofriends
    ```
-2. Install NPM packages
+2. Navigate to project folder
+   ```sh
+   cd robofriends
+   ```  
+3. Install NPM packages
    ```sh
    npm install
    ```
 
-
 <!-- USAGE EXAMPLES -->
 ## Usage
+  Run the following commands on terminal within the project folder
 
-1. Start the app
+1. Starting the app
    ```sh
    npm start
    ```
-2. If you browser doesn't open automatically, open it and navigate to
+   If you browser doesn't open automatically, open it and navigate to
    ```sh
    http://localhost:3000/
+   ```
+
+2. Formatting the app
+   ```sh
+   npm run format
+   ```
+
+3. Linting the app
+   ```sh
+   npm run lint
+   ```
+
+4. Testing the app
+   ```sh
+   npm test
+   ```
+
+   To check for testing coverage:
+   ```sh
+   npm run test-coverage
+   ```
+
+5. Building the app
+   ```sh
+   npm run build
    ```
 
 <!-- ROADMAP -->
